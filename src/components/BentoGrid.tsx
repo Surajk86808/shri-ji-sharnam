@@ -1,53 +1,56 @@
 import { motion } from 'framer-motion';
 import { Utensils, Wifi, Car, Tv, Laptop, Shield } from 'lucide-react';
-
-const amenities = [
-  {
-    title: "Fully Equipped Kitchen",
-    description: "Prepare your own sattvic meals with all necessary appliances and cookware provided.",
-    icon: <Utensils className="text-luxury-gold" size={24} />,
-    className: "md:col-span-2 md:row-span-2 bg-[url('https://a0.muscache.com/im/pictures/hosting/Hosting-1630145871946847328/original/e886c4f4-e499-4cb0-ae42-d6cd5eaead0e.jpeg')] bg-cover bg-center text-white",
-    overlay: "bg-black/40"
-  },
-  {
-    title: "High-Speed WiFi",
-    description: "Stay connected with reliable high-speed internet throughout the apartment.",
-    icon: <Wifi className="text-luxury-gold" size={24} />,
-    className: "bg-luxury-beige",
-  },
-  {
-    title: "Free Parking",
-    description: "Stress-free arrival with dedicated free parking on the premises.",
-    icon: <Car className="text-luxury-gold" size={24} />,
-    className: "bg-luxury-sand/40",
-  },
-  {
-    title: "HDTV with Streaming",
-    description: "Enjoy Netflix, Prime Video, and Disney+ on a high-definition screen.",
-    icon: <Tv className="text-luxury-gold" size={24} />,
-    className: "md:col-span-2 bg-luxury-brown text-white/90",
-  },
-  {
-    title: "Dedicated Workspace",
-    description: "A quiet spot designed for focus and productivity during your stay.",
-    icon: <Laptop className="text-luxury-gold" size={24} />,
-    className: "bg-luxury-ivory border border-luxury-sand/30",
-  },
-  {
-    title: "Self Check-in",
-    description: "Flexible arrival with a secure lockbox for your convenience.",
-    icon: <Shield className="text-luxury-gold" size={24} />,
-    className: "bg-luxury-gold/5",
-  }
-];
+import { useLanguage } from '../LanguageContext';
 
 export default function BentoGrid() {
+  const { t } = useLanguage();
+
+  const amenities = [
+    {
+      title: t.amenities.items.kitchen.title,
+      description: t.amenities.items.kitchen.desc,
+      icon: <Utensils className="text-luxury-gold" size={24} />,
+      className: "md:col-span-2 md:row-span-2 bg-[url('https://a0.muscache.com/im/pictures/hosting/Hosting-1630145871946847328/original/e886c4f4-e499-4cb0-ae42-d6cd5eaead0e.jpeg')] bg-cover bg-center text-white",
+      overlay: "bg-black/40"
+    },
+    {
+      title: t.amenities.items.wifi.title,
+      description: t.amenities.items.wifi.desc,
+      icon: <Wifi className="text-luxury-gold" size={24} />,
+      className: "bg-luxury-beige",
+    },
+    {
+      title: t.amenities.items.parking.title,
+      description: t.amenities.items.parking.desc,
+      icon: <Car className="text-luxury-gold" size={24} />,
+      className: "bg-luxury-sand/40",
+    },
+    {
+      title: t.amenities.items.tv.title,
+      description: t.amenities.items.tv.desc,
+      icon: <Tv className="text-luxury-gold" size={24} />,
+      className: "md:col-span-2 bg-luxury-brown text-white/90",
+    },
+    {
+      title: t.amenities.items.workspace.title,
+      description: t.amenities.items.workspace.desc,
+      icon: <Laptop className="text-luxury-gold" size={24} />,
+      className: "bg-luxury-ivory border border-luxury-sand/30",
+    },
+    {
+      title: t.amenities.items.checkin.title,
+      description: t.amenities.items.checkin.desc,
+      icon: <Shield className="text-luxury-gold" size={24} />,
+      className: "bg-luxury-gold/5",
+    }
+  ];
+
   return (
     <section id="amenities" className="py-16 md:py-24 px-6 md:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12 md:mb-24">
-          <span className="text-luxury-gold uppercase tracking-[0.4em] text-[10px] font-bold">Amenities</span>
-          <h2 className="text-4xl md:text-6xl font-serif text-luxury-deep mt-4 md:mt-6">Unrivaled Comforts</h2>
+          <span className="text-luxury-gold uppercase tracking-[0.4em] text-[10px] font-bold">{t.amenities.tag}</span>
+          <h2 className="text-4xl md:text-6xl font-serif text-luxury-deep mt-4 md:mt-6">{t.amenities.title}</h2>
           <div className="w-16 h-[2px] bg-luxury-gold/30 mx-auto mt-6 md:mt-8" />
         </div>
 

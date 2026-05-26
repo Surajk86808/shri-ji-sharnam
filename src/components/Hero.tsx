@@ -2,12 +2,14 @@ import { motion } from 'framer-motion';
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useLanguage } from '../LanguageContext';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
+  const { t } = useLanguage();
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -53,7 +55,7 @@ export default function Hero() {
         <div className="cursor-glow opacity-30 md:opacity-50" />
       </div>
 
-      <div ref={textRef} className="hero-content relative z-10 text-center px-6 pt-24 md:pt-40">
+      <div ref={textRef} className="hero-content relative z-10 text-center px-6 pt-24 md:pt-40 pb-32 md:pb-0">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -61,11 +63,11 @@ export default function Hero() {
           className="flex flex-col items-center mb-6 md:mb-8"
         >
           <span className="text-luxury-gold uppercase tracking-[0.4em] md:tracking-[0.6em] text-[8px] md:text-xs mb-3 md:mb-4 block font-medium">
-            A Sanctuary for the Soul
+            {t.hero.sanctuary}
           </span>
           <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md px-3 md:px-4 py-1.5 md:py-2 rounded-full border border-white/20">
             <span className="text-luxury-gold font-bold text-xs md:text-sm">5.0 ★</span>
-            <span className="text-white/80 text-[8px] md:text-[10px] uppercase tracking-widest">14 Guest Reviews</span>
+            <span className="text-white/80 text-[8px] md:text-[10px] uppercase tracking-widest">{t.hero.reviews}</span>
           </div>
         </motion.div>
         
@@ -75,8 +77,8 @@ export default function Hero() {
           transition={{ duration: 1.5, delay: 0.7 }}
           className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-serif text-white mb-6 md:mb-10 leading-[1.2] md:leading-[1] tracking-tight"
         >
-          Experience <br /> 
-          <span className="italic font-normal text-luxury-gold/90">Divine Serenity</span>
+          {t.hero.title.split(t.hero.subtitle)[0]} <br /> 
+          <span className="italic font-normal text-luxury-gold/90">{t.hero.subtitle}</span>
         </motion.h1>
 
         <motion.p 
@@ -85,7 +87,7 @@ export default function Hero() {
           transition={{ duration: 1.5, delay: 1.5 }}
           className="text-white/90 max-w-xs md:max-w-2xl mx-auto text-sm md:text-xl font-light leading-relaxed mb-10 md:mb-16 tracking-wide drop-shadow-lg"
         >
-          Your luxury 1BHK sanctuary in Omaxe Eternity, Vrindavan. Just moments away from Prem Mandir and ISKCON.
+          {t.hero.description}
         </motion.p>
 
         <motion.div
@@ -100,10 +102,13 @@ export default function Hero() {
             rel="noopener noreferrer"
             className="w-full sm:w-auto btn-premium bg-luxury-gold text-luxury-deep px-10 md:px-14 py-4 md:py-5 text-[10px] uppercase tracking-[0.2em] font-bold shadow-xl hover:scale-105 transition-transform"
           >
-            Book Your Stay
+            {t.hero.book}
           </a>
-          <button className="w-full sm:w-auto glass px-10 md:px-14 py-4 md:py-5 rounded-full text-white text-[10px] uppercase tracking-[0.2em] font-bold hover:bg-white/10 transition-all border border-white/20">
-            View Gallery
+          <button 
+            onClick={() => document.getElementById('gallery')?.scrollIntoView({ behavior: 'smooth' })}
+            className="w-full sm:w-auto glass px-10 md:px-14 py-4 md:py-5 rounded-full text-white text-[10px] uppercase tracking-[0.2em] font-bold hover:bg-white/10 transition-all border border-white/20"
+          >
+            {t.hero.gallery}
           </button>
         </motion.div>
       </div>
@@ -115,7 +120,7 @@ export default function Hero() {
         transition={{ delay: 2.5, duration: 1 }}
         className="absolute bottom-8 md:bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 md:gap-4 hidden xs:flex"
       >
-        <span className="text-white/40 text-[8px] md:text-[10px] uppercase tracking-[0.3em]">Scroll</span>
+        <span className="text-white/40 text-[8px] md:text-[10px] uppercase tracking-[0.3em]">{t.hero.scroll}</span>
         <div className="w-[1px] h-10 md:h-16 bg-gradient-to-b from-luxury-gold to-transparent" />
       </motion.div>
     </section>

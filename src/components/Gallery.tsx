@@ -1,5 +1,6 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
+import { useLanguage } from '../LanguageContext';
 
 const images = [
   "https://a0.muscache.com/im/pictures/hosting/Hosting-1630145871946847328/original/0b83f9b8-da59-43f5-822e-5b9a6c7f3442.png",
@@ -12,6 +13,7 @@ const images = [
 
 export default function Gallery() {
   const targetRef = useRef<HTMLDivElement>(null);
+  const { t } = useLanguage();
 
   const { scrollYProgress } = useScroll({
     target: targetRef,
@@ -25,9 +27,9 @@ export default function Gallery() {
       <div className="sticky top-0 h-screen flex items-center overflow-hidden">
         <motion.div style={{ x }} className="flex gap-8 lg:gap-12 px-6 lg:px-24">
           <div className="flex-shrink-0 w-[280px] sm:w-[400px] lg:w-[500px] flex flex-col justify-center">
-            <span className="text-luxury-gold uppercase tracking-[0.4em] lg:tracking-[0.5em] text-[10px] lg:text-xs mb-4 block">Visual Journey</span>
+            <span className="text-luxury-gold uppercase tracking-[0.4em] lg:tracking-[0.5em] text-[10px] lg:text-xs mb-4 block">{t.gallery.tag}</span>
             <h2 className="text-4xl lg:text-6xl font-serif text-white leading-tight">
-              A Glimpse Into <br /> <span className="italic">Serenity</span>
+              {t.gallery.title.split('Into')[0]} <br /> <span className="italic">Serenity</span>
             </h2>
           </div>
           
