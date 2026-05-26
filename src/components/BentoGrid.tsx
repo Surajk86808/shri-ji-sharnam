@@ -10,38 +10,49 @@ export default function BentoGrid() {
       title: t.amenities.items.kitchen.title,
       description: t.amenities.items.kitchen.desc,
       icon: <Utensils className="text-luxury-gold" size={24} />,
-      className: "md:col-span-2 md:row-span-2 bg-[url('https://a0.muscache.com/im/pictures/hosting/Hosting-1630145871946847328/original/e886c4f4-e499-4cb0-ae42-d6cd5eaead0e.jpeg')] bg-cover bg-center text-white",
+      image: "https://a0.muscache.com/im/pictures/hosting/Hosting-1630145871946847328/original/e886c4f4-e499-4cb0-ae42-d6cd5eaead0e.jpeg",
+      className: "md:col-span-2 md:row-span-2 text-white",
       overlay: "bg-black/40"
     },
     {
       title: t.amenities.items.wifi.title,
       description: t.amenities.items.wifi.desc,
       icon: <Wifi className="text-luxury-gold" size={24} />,
-      className: "bg-luxury-beige",
+      image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1200&auto=format&fit=crop",
+      className: "text-white",
+      overlay: "bg-black/50"
     },
     {
       title: t.amenities.items.parking.title,
       description: t.amenities.items.parking.desc,
       icon: <Car className="text-luxury-gold" size={24} />,
-      className: "bg-luxury-sand/40",
+      image: "https://images.unsplash.com/photo-1590674899484-d5640e854abe?q=80&w=1200&auto=format&fit=crop",
+      className: "text-white",
+      overlay: "bg-black/40"
     },
     {
       title: t.amenities.items.tv.title,
       description: t.amenities.items.tv.desc,
       icon: <Tv className="text-luxury-gold" size={24} />,
-      className: "md:col-span-2 bg-luxury-brown text-white/90",
+      image: "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?q=80&w=1200&auto=format&fit=crop",
+      className: "md:col-span-2 text-white",
+      overlay: "bg-black/40"
     },
     {
       title: t.amenities.items.workspace.title,
       description: t.amenities.items.workspace.desc,
       icon: <Laptop className="text-luxury-gold" size={24} />,
-      className: "bg-luxury-ivory border border-luxury-sand/30",
+      image: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop",
+      className: "text-white",
+      overlay: "bg-black/50"
     },
     {
       title: t.amenities.items.checkin.title,
       description: t.amenities.items.checkin.desc,
       icon: <Shield className="text-luxury-gold" size={24} />,
-      className: "bg-luxury-gold/5",
+      image: "https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?q=80&w=1200&auto=format&fit=crop",
+      className: "md:col-span-2 text-white",
+      overlay: "bg-black/50"
     }
   ];
 
@@ -64,6 +75,13 @@ export default function BentoGrid() {
               viewport={{ once: true }}
               className={`group relative overflow-hidden rounded-2xl md:rounded-[2rem] p-8 md:p-10 flex flex-col justify-end transition-all duration-700 hover:shadow-[0_30px_60px_rgba(0,0,0,0.1)] hover:-translate-y-2 ${item.className}`}
             >
+              {item.image && (
+                <img 
+                  src={item.image} 
+                  alt={item.title}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+              )}
               {item.overlay && <div className={`absolute inset-0 ${item.overlay} transition-opacity duration-700 group-hover:opacity-60`} />}
               
               <div className="relative z-10">

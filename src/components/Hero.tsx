@@ -96,14 +96,21 @@ export default function Hero() {
           transition={{ duration: 1.5, delay: 1.8 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-8"
         >
-          <a 
-            href="https://wa.me/919876543210?text=Hi,%20I'm%20interested%20in%20booking%20a%20stay%20at%20Shri%20Ji%20Sharnam.%20Could%20you%20please%20provide%20more%20details?"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full sm:w-auto btn-premium bg-luxury-gold text-luxury-deep px-10 md:px-14 py-4 md:py-5 text-[10px] uppercase tracking-[0.2em] font-bold shadow-xl hover:scale-105 transition-transform"
-          >
-            {t.hero.book}
-          </a>
+          <div className="relative w-full sm:hidden">
+            {/* Guaranteed Best Rate Badge: Positioned outside the button to prevent overlap */}
+            <span className="absolute -top-4 left-1/2 -translate-x-1/2 bg-white text-luxury-deep text-[7px] md:text-[8px] py-1 px-3 rounded-full whitespace-nowrap animate-bounce shadow-lg border border-luxury-gold/20 z-20 font-bold uppercase tracking-widest">
+              Guaranteed Best Rate
+            </span>
+            <a 
+              href="https://wa.me/919876543210?text=Hi,%20I'm%20interested%20in%20booking%20a%20stay%20at%20Shri%20Ji%20Sharnam.%20Could%20you%20please%20provide%20more%20details?"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto btn-premium bg-luxury-gold text-luxury-deep px-8 md:px-14 py-4 md:py-5 text-[10px] uppercase tracking-[0.2em] font-bold shadow-xl hover:scale-105 transition-transform flex items-center justify-center"
+            >
+              {t.hero.directBooking}
+            </a>
+          </div>
+          
           <button 
             onClick={() => document.getElementById('gallery')?.scrollIntoView({ behavior: 'smooth' })}
             className="w-full sm:w-auto glass px-10 md:px-14 py-4 md:py-5 rounded-full text-white text-[10px] uppercase tracking-[0.2em] font-bold hover:bg-white/10 transition-all border border-white/20"

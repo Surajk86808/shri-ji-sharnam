@@ -89,53 +89,69 @@ export default function Experience() {
           <div className="pt-8 md:pt-12 grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 gap-4 md:gap-8">
             <motion.div 
               whileHover={{ y: -5 }}
-              className="p-5 md:p-6 rounded-xl md:rounded-2xl bg-white border border-luxury-gold/10 shadow-sm hover:shadow-md transition-all duration-500"
+              className="group relative overflow-hidden p-5 md:p-6 rounded-xl md:rounded-2xl bg-[url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1200&auto=format&fit=crop')] bg-cover bg-center text-white shadow-sm hover:shadow-xl transition-all duration-500"
             >
-              <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-luxury-gold/5 flex items-center justify-center mb-3 md:mb-4">
-                <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-luxury-gold animate-pulse" />
+              <div className="absolute inset-0 bg-black/50 transition-opacity duration-500 group-hover:opacity-60" />
+              <div className="relative z-10">
+                <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center mb-3 md:mb-4">
+                  <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-luxury-gold animate-pulse" />
+                </div>
+                <h5 className="font-serif text-base md:text-lg mb-1 md:mb-2">{t.experience.features.view.title}</h5>
+                <p className="text-[9px] md:text-[10px] opacity-70 uppercase tracking-widest leading-relaxed">
+                  {t.experience.features.view.desc}
+                </p>
               </div>
-              <h5 className="font-serif text-base md:text-lg text-luxury-deep mb-1 md:mb-2">{t.experience.features.view.title}</h5>
-              <p className="text-[9px] md:text-[10px] text-luxury-charcoal/40 uppercase tracking-widest leading-relaxed">
-                {t.experience.features.view.desc}
-              </p>
             </motion.div>
 
             <motion.div 
               whileHover={{ y: -5 }}
-              className="p-5 md:p-6 rounded-xl md:rounded-2xl bg-white border border-luxury-gold/10 shadow-sm hover:shadow-md transition-all duration-500"
+              className="group relative overflow-hidden p-5 md:p-6 rounded-xl md:rounded-2xl bg-[url('https://images.unsplash.com/photo-1631049307264-da0ec9d70304?q=80&w=1200&auto=format&fit=crop')] bg-cover bg-center text-white shadow-sm hover:shadow-xl transition-all duration-500"
             >
-              <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-luxury-gold/5 flex items-center justify-center mb-3 md:mb-4">
-                <div className="w-3 md:w-4 h-[1px] bg-luxury-gold rotate-45" />
-                <div className="w-3 md:w-4 h-[1px] bg-luxury-gold -rotate-45" />
+              <div className="absolute inset-0 bg-black/50 transition-opacity duration-500 group-hover:opacity-60" />
+              <div className="relative z-10">
+                <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center mb-3 md:mb-4">
+                  <div className="w-3 md:w-4 h-[1px] bg-luxury-gold rotate-45" />
+                  <div className="w-3 md:w-4 h-[1px] bg-luxury-gold -rotate-45" />
+                </div>
+                <h5 className="font-serif text-base md:text-lg mb-1 md:mb-2">{t.experience.features.comfort.title}</h5>
+                <p className="text-[9px] md:text-[10px] opacity-70 uppercase tracking-widest leading-relaxed">
+                  {t.experience.features.comfort.desc}
+                </p>
               </div>
-              <h5 className="font-serif text-base md:text-lg text-luxury-deep mb-1 md:mb-2">{t.experience.features.comfort.title}</h5>
-              <p className="text-[9px] md:text-[10px] text-luxury-charcoal/40 uppercase tracking-widest leading-relaxed">
-                {t.experience.features.comfort.desc}
-              </p>
             </motion.div>
 
             <motion.div 
               whileHover={{ y: -5 }}
-              className="p-5 md:p-6 rounded-xl md:rounded-2xl bg-white border border-luxury-gold/10 shadow-sm hover:shadow-md transition-all duration-500 hidden xs:block"
+              className="group relative overflow-hidden p-5 md:p-6 rounded-xl md:rounded-2xl bg-[url('https://images.unsplash.com/photo-1528715471579-d1bcf0ba5e83?q=80&w=1200&auto=format&fit=crop')] bg-cover bg-center text-white shadow-sm hover:shadow-xl transition-all duration-500 hidden xs:block"
             >
-              <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-luxury-gold/5 flex items-center justify-center mb-3 md:mb-4">
-                <span className="text-luxury-gold text-[10px] md:text-xs italic font-serif">Om</span>
+              <div className="absolute inset-0 bg-black/50 transition-opacity duration-500 group-hover:opacity-60" />
+              <div className="relative z-10">
+                <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center mb-3 md:mb-4">
+                  <span className="text-luxury-gold text-[10px] md:text-xs italic font-serif">Om</span>
+                </div>
+                <h5 className="font-serif text-base md:text-lg mb-1 md:mb-2">{t.experience.features.aura.title}</h5>
+                <p className="text-[9px] md:text-[10px] opacity-70 uppercase tracking-widest leading-relaxed">
+                  {t.experience.features.aura.desc}
+                </p>
               </div>
-              <h5 className="font-serif text-base md:text-lg text-luxury-deep mb-1 md:mb-2">{t.experience.features.aura.title}</h5>
-              <p className="text-[9px] md:text-[10px] text-luxury-charcoal/40 uppercase tracking-widest leading-relaxed">
-                {t.experience.features.aura.desc}
-              </p>
             </motion.div>
+          </div>
+
+          <div className="pt-12 space-y-4">
+            <p className="text-luxury-gold text-xs uppercase tracking-widest font-bold">Direct Booking Benefits</p>
+            <p className="text-luxury-charcoal/60 text-sm leading-relaxed max-w-md italic">
+              {t.experience.directBookingNote}
+            </p>
           </div>
 
           <a 
             href="https://wa.me/919876543210?text=Hi,%20I'm%20interested%20in%20booking%20a%20stay%20at%20Shri%20Ji%20Sharnam.%20Could%20you%20please%20provide%20more%20details?"
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-center gap-4 md:gap-6 text-luxury-deep uppercase tracking-[0.2em] md:tracking-[0.3em] text-[10px] font-bold pt-8 md:pt-12"
+            className="group flex items-center gap-4 md:gap-6 text-luxury-deep uppercase tracking-[0.2em] md:tracking-[0.3em] text-[10px] font-bold pt-4"
           >
             <span className="w-12 md:w-16 h-[1px] bg-luxury-gold group-hover:w-20 md:group-hover:w-24 transition-all duration-700" />
-            {t.experience.book}
+            {t.experience.directBook}
           </a>
         </motion.div>
       </div>

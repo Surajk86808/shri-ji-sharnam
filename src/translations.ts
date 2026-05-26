@@ -16,6 +16,7 @@ export interface TranslationDict {
     subtitle: string;
     description: string;
     book: string;
+    directBooking: string;
     gallery: string;
     scroll: string;
   };
@@ -27,6 +28,8 @@ export interface TranslationDict {
     location: string;
     stay: string;
     book: string;
+    directBook: string;
+    directBookingNote: string;
     features: {
       view: { title: string; desc: string };
       comfort: { title: string; desc: string };
@@ -44,6 +47,18 @@ export interface TranslationDict {
       workspace: { title: string; desc: string };
       checkin: { title: string; desc: string };
     };
+  };
+  directBenefits: {
+    tag: string;
+    title: string;
+    subtitle: string;
+    items: {
+      fees: { title: string; desc: string };
+      contact: { title: string; desc: string };
+      price: { title: string; desc: string };
+      secure: { title: string; desc: string };
+    };
+    cta: string;
   };
   gallery: {
     tag: string;
@@ -80,6 +95,7 @@ export const translations: Record<Language, TranslationDict> = {
       subtitle: "Divine Serenity",
       description: "Your luxury 1BHK sanctuary in Omaxe Eternity, Vrindavan. Just moments away from Prem Mandir and ISKCON.",
       book: "Book Your Stay",
+      directBooking: "Book Direct (Save Fees)",
       gallery: "View Gallery",
       scroll: "Scroll",
     },
@@ -91,6 +107,8 @@ export const translations: Record<Language, TranslationDict> = {
       location: "Prime Location",
       stay: "Seamless Stay",
       book: "Book Your Stay",
+      directBook: "Connect via WhatsApp to book directly with the host.",
+      directBookingNote: "Skip third-party platform fees (Airbnb/Booking.com) by booking directly. Guaranteed best rates.",
       features: {
         view: { title: "Divine View", desc: "Temple Facing Balcony" },
         comfort: { title: "Pure Comfort", desc: "Premium Linens & Bedding" },
@@ -108,6 +126,18 @@ export const translations: Record<Language, TranslationDict> = {
         workspace: { title: "Dedicated Workspace", desc: "A quiet spot designed for focus." },
         checkin: { title: "Self Check-in", desc: "Flexible arrival with a secure lockbox." },
       },
+    },
+    directBenefits: {
+      tag: "Direct Booking",
+      title: "Book Direct & Save",
+      subtitle: "Skip the middlemen and their extra fees. Experience a more personal and affordable way to book your stay.",
+      items: {
+        fees: { title: "No Service Fees", desc: "Escape the 15-20% commission charged by third-party booking sites." },
+        contact: { title: "Direct Connection", desc: "Communicate directly with the owner for a personalized experience." },
+        price: { title: "Best Rate Policy", desc: "Get the most competitive rates by paying the host directly." },
+        secure: { title: "Instant Access", desc: "Fast confirmation and direct coordination for your arrival." },
+      },
+      cta: "Book Direct via WhatsApp",
     },
     gallery: {
       tag: "Visual Journey",
@@ -142,6 +172,7 @@ export const translations: Record<Language, TranslationDict> = {
       subtitle: "दिव्य शांति",
       description: "ओमेक्स एटर्निटी, वृंदावन में आपका लग्जरी १ बीएचके धाम। प्रेम मंदिर और इस्कॉन के बिल्कुल समीप।",
       book: "अभी पधारें",
+      directBooking: "सीधी बुकिंग (शुल्क बचाएं)",
       gallery: "झलक देखें",
       scroll: "नीचे चलें",
     },
@@ -153,6 +184,8 @@ export const translations: Record<Language, TranslationDict> = {
       location: "खास जगह",
       stay: "सहज सुगम वास",
       book: "अभी बुक करें",
+      directBook: "मेजबान के साथ सीधे बुक करने के लिए व्हाट्सएप पर जुड़ें।",
+      directBookingNote: "सीधे बुकिंग करके तीसरे पक्ष के प्लेटफॉर्म शुल्क (Airbnb/Booking.com) से बचें। सर्वोत्तम दरों की गारंटी।",
       features: {
         view: { title: "दिव्य दर्शन", desc: "मंदिर की ओर खुलती बालकनी" },
         comfort: { title: "पूर्ण सुख", desc: "प्रीमियम बिस्तर और कोमलता" },
@@ -170,6 +203,18 @@ export const translations: Record<Language, TranslationDict> = {
         workspace: { title: "कार्य स्थल", desc: "एकांत में काम करने के लिए विशेष स्थान।" },
         checkin: { title: "सेल्फ चेक-इन", desc: "लॉकबॉक्स के साथ कभी भी आने की सुविधा।" },
       },
+    },
+    directBenefits: {
+      tag: "सीधी बुकिंग",
+      title: "सीधे बुक करें और बचत करें",
+      subtitle: "बिचौलियों और उनके अतिरिक्त शुल्कों से बचें। बुकिंग का एक अधिक व्यक्तिगत और किफायती तरीका अपनाएं।",
+      items: {
+        fees: { title: "कोई सर्विस शुल्क नहीं", desc: "बुकिंग साइटों द्वारा लिए जाने वाले १५-२०% कमीशन से बचें।" },
+        contact: { title: "सीधा संपर्क", desc: "व्यक्तिगत अनुभव के लिए सीधे मालिक से संपर्क करें।" },
+        price: { title: "सर्वोत्तम दर", desc: "मालिक को सीधे भुगतान करके सबसे कम दरें प्राप्त करें।" },
+        secure: { title: "त्वरित पहुँच", desc: "आपके आगमन के लिए तेज़ पुष्टि और सीधा समन्वय।" },
+      },
+      cta: "व्हाट्सएप के माध्यम से सीधे बुक करें",
     },
     gallery: {
       tag: "विजुअल यात्रा",

@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import DirectBookingBenefits from './components/DirectBookingBenefits';
 import Experience from './components/Experience';
 import BentoGrid from './components/BentoGrid';
 import Gallery from './components/Gallery';
 import BookingWidget from './components/BookingWidget';
+import FloatingLanguageToggle from './components/FloatingLanguageToggle';
 import Footer from './components/Footer';
 import SmoothScroll from './components/SmoothScroll';
 import { motion } from 'framer-motion';
@@ -36,6 +38,7 @@ function App() {
           
           <main>
             <Hero />
+            <DirectBookingBenefits />
             <Experience />
             <BentoGrid />
             <Gallery />
@@ -57,6 +60,7 @@ function App() {
             </section>
 
             <BookingWidget />
+            <FloatingLanguageToggle />
           </main>
 
           <Footer />
