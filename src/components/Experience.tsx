@@ -8,65 +8,133 @@ export default function Experience() {
     offset: ["start end", "end start"]
   });
 
-  const y1 = useTransform(scrollYProgress, [0, 1], [0, -100]);
-  const y2 = useTransform(scrollYProgress, [0, 1], [0, 100]);
+  // Balanced parallax for all devices
+  const y1 = useTransform(scrollYProgress, [0, 1], [0, -60]);
+  const y2 = useTransform(scrollYProgress, [0, 1], [0, 60]);
 
   return (
-    <section ref={containerRef} className="py-48 px-8 bg-luxury-ivory overflow-hidden relative">
-      <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-white/50 to-transparent pointer-events-none" />
+    <section id="experience" ref={containerRef} className="py-16 md:py-24 px-6 md:px-8 bg-luxury-ivory overflow-hidden relative">
+      <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-black/5 to-transparent pointer-events-none" />
       
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-32 items-center">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-32 items-center">
         
-        <motion.div style={{ y: y1 }} className="relative">
-          <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)]">
+        <motion.div 
+          style={{ y: y1 }} 
+          className="relative order-2 lg:order-1"
+        >
+          <div className="aspect-[4/5] rounded-2xl md:rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)]">
             <img 
-              src="https://images.unsplash.com/photo-1604881991720-f91add269bed?q=80&w=1974&auto=format&fit=crop" 
-              alt="Luxury Interior"
+              src="https://a0.muscache.com/im/pictures/hosting/Hosting-1630145871946847328/original/4ed03bc6-41ed-4a94-8a21-41a997a5408f.png" 
+              alt="Luxury Bedroom at Shri Ji Sharnam"
               className="w-full h-full object-cover"
             />
           </div>
-          <div className="absolute -bottom-16 -right-16 w-80 aspect-square rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.15)] hidden xl:block">
+          <div className="absolute -bottom-8 -right-8 md:-bottom-16 md:-right-16 w-48 md:w-80 aspect-square rounded-2xl md:rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.15)] hidden sm:block">
             <img 
-              src="https://images.unsplash.com/photo-1590059536098-9418a9376662?q=80&w=1964&auto=format&fit=crop" 
-              alt="Meditation Space"
+              src="https://a0.muscache.com/im/pictures/hosting/Hosting-1630145871946847328/original/10d7e8f8-32d3-4733-be7a-11213f5cee13.jpeg" 
+              alt="Living Area at Shri Ji Sharnam"
               className="w-full h-full object-cover"
             />
           </div>
         </motion.div>
 
-        <motion.div style={{ y: y2 }} className="space-y-12">
+        <motion.div 
+          style={{ y: y2 }} 
+          className="space-y-8 md:space-y-12 order-1 lg:order-2"
+        >
           <div>
-            <span className="text-luxury-gold uppercase tracking-[0.4em] text-[10px] font-bold mb-6 block">The Experience</span>
-            <h2 className="text-6xl md:text-7xl font-serif text-luxury-deep leading-[1.1] mb-8">
-              Transcending the <br /> <span className="italic font-normal text-luxury-gold/80">Ordinary</span>
+            <span className="text-luxury-gold uppercase tracking-[0.4em] text-[10px] font-bold mb-4 md:mb-6 block">The Retreat</span>
+            <h2 className="text-4xl md:text-7xl font-serif text-luxury-deep leading-[1.2] md:leading-[1.1] mb-6 md:mb-8">
+              Your Home in <br className="hidden md:block" /> <span className="italic font-normal text-luxury-gold/80">Omaxe Eternity</span>
             </h2>
-            <div className="w-20 h-[2px] bg-luxury-gold/30 mb-12" />
+            <div className="w-16 md:w-20 h-[2px] bg-luxury-gold/30 mb-8 md:mb-12" />
           </div>
 
-          <div className="space-y-8">
-            <p className="text-luxury-charcoal/80 text-xl leading-relaxed font-light tracking-wide">
-              Nestled in the heart of Vrindavan, Shri Ji Sharanam offers more than just a stay. It is an invitation to reconnect with your inner self in an environment of unparalleled elegance and spiritual resonance.
+          <div className="space-y-6 md:space-y-8">
+            <p className="text-luxury-charcoal/80 text-lg md:text-xl leading-relaxed font-light tracking-wide">
+              Experience the perfect blend of spiritual proximity and modern luxury in our fully furnished 1BHK apartment. Designed to comfortably host up to 4 guests, it's your ideal sanctuary in the holy town of Vrindavan.
             </p>
-            <p className="text-luxury-charcoal/80 text-xl leading-relaxed font-light tracking-wide">
-              Every detail, from the saffron-scented air to the golden hour views of the Banke Bihari temple, is designed to elevate your consciousness.
+            <p className="text-luxury-charcoal/80 text-base md:text-lg leading-relaxed font-light tracking-wide">
+              Featuring a serene bedroom with a king-size bed and a spacious living room equipped with two single beds and a cozy sofa.
             </p>
           </div>
           
-          <div className="pt-12 grid grid-cols-1 sm:grid-cols-2 gap-16">
+          <div className="pt-8 md:pt-12 grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-16">
             <div className="space-y-4">
-              <h4 className="font-serif text-2xl text-luxury-deep">Soulful Design</h4>
-              <p className="text-sm text-luxury-charcoal/60 leading-relaxed">Crafted with Vedic principles and contemporary aesthetics to create a harmonious sanctuary.</p>
+              <h4 className="font-serif text-xl md:text-2xl text-luxury-deep">Prime Location</h4>
+              <ul className="text-sm text-luxury-charcoal/60 space-y-2">
+                <li className="flex items-center gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-luxury-gold" />
+                  1.6 km from Prem Mandir
+                </li>
+                <li className="flex items-center gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-luxury-gold" />
+                  2 km from ISKCON
+                </li>
+                <li className="flex items-center gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-luxury-gold" />
+                  4 km from Banke Bihari Temple
+                </li>
+              </ul>
             </div>
             <div className="space-y-4">
-              <h4 className="font-serif text-2xl text-luxury-deep">Divine Proximity</h4>
-              <p className="text-sm text-luxury-charcoal/60 leading-relaxed">Located steps away from Vrindavan's most sacred sites and the vibration of the holy town.</p>
+              <h4 className="font-serif text-xl md:text-2xl text-luxury-deep">Seamless Stay</h4>
+              <p className="text-sm text-luxury-charcoal/60 leading-relaxed">Self check-in via lockbox and dedicated support from your host, Rishabh, ensuring a peaceful arrival.</p>
             </div>
           </div>
 
-          <button className="group flex items-center gap-6 text-luxury-deep uppercase tracking-[0.3em] text-[10px] font-bold pt-12">
-            <span className="w-16 h-[1px] bg-luxury-gold group-hover:w-24 transition-all duration-700" />
-            Discover More
-          </button>
+          {/* Interactive Feature Cards */}
+          <div className="pt-8 md:pt-12 grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 gap-4 md:gap-8">
+            <motion.div 
+              whileHover={{ y: -5 }}
+              className="p-5 md:p-6 rounded-xl md:rounded-2xl bg-white border border-luxury-gold/10 shadow-sm hover:shadow-md transition-all duration-500"
+            >
+              <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-luxury-gold/5 flex items-center justify-center mb-3 md:mb-4">
+                <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-luxury-gold animate-pulse" />
+              </div>
+              <h5 className="font-serif text-base md:text-lg text-luxury-deep mb-1 md:mb-2">Divine View</h5>
+              <p className="text-[9px] md:text-[10px] text-luxury-charcoal/40 uppercase tracking-widest leading-relaxed">
+                Temple Facing <br className="hidden md:block" /> Balcony
+              </p>
+            </motion.div>
+
+            <motion.div 
+              whileHover={{ y: -5 }}
+              className="p-5 md:p-6 rounded-xl md:rounded-2xl bg-white border border-luxury-gold/10 shadow-sm hover:shadow-md transition-all duration-500"
+            >
+              <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-luxury-gold/5 flex items-center justify-center mb-3 md:mb-4">
+                <div className="w-3 md:w-4 h-[1px] bg-luxury-gold rotate-45" />
+                <div className="w-3 md:w-4 h-[1px] bg-luxury-gold -rotate-45" />
+              </div>
+              <h5 className="font-serif text-base md:text-lg text-luxury-deep mb-1 md:mb-2">Pure Comfort</h5>
+              <p className="text-[9px] md:text-[10px] text-luxury-charcoal/40 uppercase tracking-widest leading-relaxed">
+                Premium Linens <br className="hidden md:block" /> & Bedding
+              </p>
+            </motion.div>
+
+            <motion.div 
+              whileHover={{ y: -5 }}
+              className="p-5 md:p-6 rounded-xl md:rounded-2xl bg-white border border-luxury-gold/10 shadow-sm hover:shadow-md transition-all duration-500 hidden xs:block"
+            >
+              <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-luxury-gold/5 flex items-center justify-center mb-3 md:mb-4">
+                <span className="text-luxury-gold text-[10px] md:text-xs italic font-serif">Om</span>
+              </div>
+              <h5 className="font-serif text-base md:text-lg text-luxury-deep mb-1 md:mb-2">Sacred Aura</h5>
+              <p className="text-[9px] md:text-[10px] text-luxury-charcoal/40 uppercase tracking-widest leading-relaxed">
+                Quiet & Spiritual <br className="hidden md:block" /> Environment
+              </p>
+            </motion.div>
+          </div>
+
+          <a 
+            href="https://wa.me/919876543210?text=Hi,%20I'm%20interested%20in%20booking%20a%20stay%20at%20Shri%20Ji%20Sharnam.%20Could%20you%20please%20provide%20more%20details?"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex items-center gap-4 md:gap-6 text-luxury-deep uppercase tracking-[0.2em] md:tracking-[0.3em] text-[10px] font-bold pt-8 md:pt-12"
+          >
+            <span className="w-12 md:w-16 h-[1px] bg-luxury-gold group-hover:w-20 md:group-hover:w-24 transition-all duration-700" />
+            Book Your Stay
+          </a>
         </motion.div>
       </div>
     </section>

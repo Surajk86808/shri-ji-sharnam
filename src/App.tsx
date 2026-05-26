@@ -48,7 +48,7 @@ function App() {
               className="max-w-4xl mx-auto"
             >
               <h2 className="text-3xl md:text-5xl font-serif italic text-luxury-charcoal/80 leading-relaxed">
-                "In the silence of the heart, one hears the whisper of the Divine. Welcome home to your sanctuary in Vrindavan."
+                "At Shri Ji Sharnam, we believe that every journey to Vrindavan is a pilgrimage of the soul. Your sanctuary awaits."
               </h2>
               <div className="w-24 h-[1px] bg-luxury-gold mx-auto mt-12" />
             </motion.div>
